@@ -23,7 +23,7 @@ namespace Lesson10_Inheritance
 
         // Добавить проверку, чтобы год поступления был как минимум на 10 лет больше года рождения
         public uint YearIn { get => yearIn; set => yearIn = ((uint)DateTime.Now.Year - Constants.MaxYearDistance) > Constants.MaxYearDistance ? (uint)DateTime.Now.Year - Constants.MaxYearDistance : value; } 
-        
+
         public string SpecialtyCode { get => specialtyCode; set => specialtyCode = value; }
 
         public DateTime PassportDate { get => passportDate; set => passportDate = value; }
@@ -32,11 +32,12 @@ namespace Lesson10_Inheritance
         {
             //            return Errors.LastErrorCode > 0 ? Errors.GetCurrentErrorInfo() : "Student " + base.ToString() + ". YearIn: " + YearIn + ", specialty: " + SpecialtyCode ;
 
-            if (Errors.LastErrorCode > 0)
-                return Errors.GetCurrentErrorInfo();
+            if (this.ErrorCode > 0)
+                return Errors.GetCurrentErrorInfo(this.ErrorCode);
             else
-                return "Student " + base.ToString() + ". YearIn: " + YearIn + ", specialty: " + SpecialtyCode;
-
+                return "Student " + base.ToString() + 
+                    ". YearIn: " + YearIn + 
+                    ", specialty: " + SpecialtyCode;
         }
     }
 }

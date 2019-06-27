@@ -18,9 +18,9 @@ namespace Lesson10_Inheritance
             "Недопустимый возраст студента",
         };
 
-        public static string GetCurrentErrorInfo()
+        public static string GetCurrentErrorInfo(int errorCode)
         {
-            return errorsDescription[lastErrorCode];
+            return errorsDescription[errorCode];
         }
 
         public static DateTime ErrorDateTime(int errorCode)

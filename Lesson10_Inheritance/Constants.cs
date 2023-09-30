@@ -8,8 +8,8 @@ namespace Lesson10_Inheritance
 {
     public static class Constants
     {
-        public const uint MaxYearDistance = 10;
-        public const uint MaxStudentAge = 80;
-        public const uint MaxPersonAge = 200;
+        public const uint MIN_YEAR_DISTANCE = 10;
+        public const uint MAX_STUDENT_AGE = 80;
+        public const uint MAX_PERSON_AGE = 200;
     }
 }
